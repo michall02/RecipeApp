@@ -1,0 +1,16 @@
+INSERT INTO category (description) VALUES ('Polish');
+INSERT INTO category (description) VALUES ('French');
+INSERT INTO category (description) VALUES ('Mexican');
+INSERT INTO category (description) VALUES ('Indian');
+INSERT INTO category (description) VALUES ('English');
+INSERT INTO category (description) VALUES ('Greek');
+INSERT INTO unit_of_measure (description) VALUES ('Teaspoon');
+INSERT INTO unit_of_measure (description) VALUES ('Tablespoon');
+INSERT INTO unit_of_measure (description) VALUES ('Ounce');
+INSERT INTO unit_of_measure (description) VALUES ('Pint');
+INSERT INTO unit_of_measure (description) VALUES ('Quart');
+INSERT INTO unit_of_measure (description) VALUES ('Stalk');
+INSERT INTO unit_of_measure (description) VALUES ('Can');
+INSERT INTO unit_of_measure (description) VALUES ('Slice');
+INSERT INTO unit_of_measure (description) VALUES ('Whole');
+INSERT INTO unit_of_measure (description) VALUES ('Cup');
