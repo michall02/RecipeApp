@@ -1,0 +1,9 @@
+INSERT INTO category (description) VALUES ('Polish');
+INSERT INTO category (description) VALUES ('French');
+INSERT INTO category (description) VALUES ('Mexican');
+INSERT INTO category (description) VALUES ('Indian');
+INSERT INTO unit_of_measure (description) VALUES ('teaspoon');
+INSERT INTO unit_of_measure (description) VALUES ('tablespoon');
+INSERT INTO unit_of_measure (description) VALUES ('ounce');
+INSERT INTO unit_of_measure (description) VALUES ('pint');
+INSERT INTO unit_of_measure (description) VALUES ('quart');
