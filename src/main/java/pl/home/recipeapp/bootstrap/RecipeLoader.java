@@ -3,6 +3,7 @@ package pl.home.recipeapp.bootstrap;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import pl.home.recipeapp.model.Category;
 import pl.home.recipeapp.model.Difficulty;
 import pl.home.recipeapp.model.Ingredient;
@@ -33,6 +34,7 @@ public class RecipeLoader implements ApplicationListener<ContextRefreshedEvent> 
     }
 
     @Override
+    @Transactional
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         recipeRepository.saveAll(getRecipes());
 
