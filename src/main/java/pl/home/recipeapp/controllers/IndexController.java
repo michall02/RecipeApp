@@ -6,19 +6,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.home.recipeapp.repositories.CategoryRepository;
 import pl.home.recipeapp.repositories.RecipeRepository;
 import pl.home.recipeapp.repositories.UnitOfMeasureRepository;
+import pl.home.recipeapp.services.RecipeService;
 
 @Controller
 public class IndexController {
 
-    private final RecipeRepository recipeRepository;
+    private final RecipeService recipeService;
 
-    public IndexController(RecipeRepository recipeRepository) {
-        this.recipeRepository = recipeRepository;
+    public IndexController(RecipeService recipeService) {
+        this.recipeService = recipeService;
     }
 
     @RequestMapping({"","/","/index"})
     public String getIndexPage(Model model){
-        model.addAttribute("recipes", recipeRepository.findAll());
+        model.addAttribute("recipes", recipeService.getRecipes());
 
         return "index";
     }
