@@ -1,7 +1,7 @@
 package pl.home.recipeapp.model;
 
 public enum Difficulty {
-    EASE,
+    EASY,
     MODERATE,
     HARD;
 }
