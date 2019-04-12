@@ -10,3 +10,6 @@ The recipes come from the website: www.simplyrecipes.com
   * Thymeleaf
 * Java 8
 * Bootstrap 4
+
+### Project status
+The app is under development.
