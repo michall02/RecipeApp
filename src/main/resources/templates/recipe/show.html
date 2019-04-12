@@ -82,8 +82,15 @@
                     </div>
                 </div>
                 <div class="card border-warning mb-3">
-                    <div class="card-header bg-warning mb-3 text-center">
-                        <h1>Ingredients</h1>
+                    <div class="card-header bg-warning mb-3">
+                        <div class="row">
+                            <div class="col-md-11  text-center ">
+                                <h1>Ingredients</h1>
+                            </div>
+                            <div class="col-md-1">
+                                <a class="btn btn-secondary" href="#" th:href="@{'/recipe/' + ${recipe.id} + '/ingredients'}" role="button">View</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-block">
                         <div class="row">
