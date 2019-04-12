@@ -3,7 +3,7 @@ Spring Boot Web Application with recpies which allows browsing as well as adding
 The recipes come from the website: www.simplyrecipes.com
 
 
-## Technologies:
+## Technologies
 * Spring Framework 5 : 
   * Web
   * Data JPA
