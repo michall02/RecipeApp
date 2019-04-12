@@ -116,7 +116,7 @@ public class RecipeLoader implements ApplicationListener<ContextRefreshedEvent> 
         clCarSalRecipe.setDescription("Classic Carrot Salad");
         clCarSalRecipe.setPrepTime(15);
         clCarSalRecipe.setCookTime(0);
-        clCarSalRecipe.setDifficulty(Difficulty.EASE);
+        clCarSalRecipe.setDifficulty(Difficulty.EASY);
         clCarSalRecipe.setUrl("https://www.simplyrecipes.com/recipes/classic_carrot_salad/");
         clCarSalRecipe.setServings(4);
 
