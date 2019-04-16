@@ -9,13 +9,21 @@
 
 </head>
 <body>
+<!--/*@thymesVar id="recipe" type="pl.home.recipeapp.model.Recipe"*/-->
 <div class="container-fluid" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <div class="card border-warning mb-3 text-center">
-
                 <div class="card-header bg-warning mb-3">
-                    <h1 style="text-align: center" class="card-title">My Recipes!</h1>
+                    <div class="row">
+                        <div class="col-md-10 ">
+                            <h1 style="text-align: center" class="card-title">My Recipes!</h1>
+                        </div>
+                        <div class="col-md-2">
+                            <a class="btn btn-danger" href="#"
+                               th:href="@{'/recipe/new'}" role="button">New Recipe</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive" th:if="${not #lists.isEmpty(recipes)}">
@@ -30,7 +38,6 @@
                             </tr>
                             </thead>
                             <tr th:each="recipe : ${recipes}">
-                                <!--/*@thymesVar id="recipe" type="pl.home.recipeapp.model.Recipe"*/-->
                                 <td th:text="${recipe.id}">recipe</td>
                                 <td th:text="${recipe.description}">description</td>
                                 <td><a href="#" th:href="@{'/recipe/' + ${recipe.id}+ '/show/'}">View</a></td>

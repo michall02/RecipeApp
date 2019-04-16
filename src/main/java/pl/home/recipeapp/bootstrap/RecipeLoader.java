@@ -27,6 +27,7 @@ public class RecipeLoader implements ApplicationListener<ContextRefreshedEvent> 
     private RecipeRepository recipeRepository;
     private UnitOfMeasureRepository unitOfMeasureRepository;
 
+
     public RecipeLoader(CategoryRepository categoryRepository, RecipeRepository recipeRepository, UnitOfMeasureRepository unitOfMeasureRepository) {
         this.categoryRepository = categoryRepository;
         this.recipeRepository = recipeRepository;
@@ -36,7 +37,11 @@ public class RecipeLoader implements ApplicationListener<ContextRefreshedEvent> 
     @Override
     @Transactional
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        recipeRepository.saveAll(getRecipes());
+        Optional<Recipe> firstRecipe = recipeRepository.findById(1L);
+        Optional<Recipe> secondRecipe = recipeRepository.findById(2L);
+        if(!firstRecipe.isPresent() && !secondRecipe.isPresent()){
+            recipeRepository.saveAll(getRecipes());
+        }
 
 
     }
@@ -118,7 +123,10 @@ public class RecipeLoader implements ApplicationListener<ContextRefreshedEvent> 
         clCarSalRecipe.setCookTime(0);
         clCarSalRecipe.setDifficulty(Difficulty.EASY);
         clCarSalRecipe.setUrl("https://www.simplyrecipes.com/recipes/classic_carrot_salad/");
+        clCarSalRecipe.setSource("simplyrecipes.com");
         clCarSalRecipe.setServings(4);
+
+
 
         clCarSalRecipe.setDirections("The proportions of this recipe are flexible, depending on what you have on hand. Many traditional carrot salad recipes also call for crushed pineapple, but I think with the apples, raisins, and carrots, it’s sweet enough.\n" +
                 "By the way, you can often find carrots of different colors at the market — deep red, purple, bright orange, and bold yellow.\n" +
@@ -148,6 +156,7 @@ public class RecipeLoader implements ApplicationListener<ContextRefreshedEvent> 
         englishMuffinRecipe.setPrepTime(15);
         englishMuffinRecipe.setDifficulty(Difficulty.MODERATE);
         englishMuffinRecipe.setUrl("https://www.simplyrecipes.com/recipes/english_muffin_tuna_melts/");
+        englishMuffinRecipe.setSource("simplyrecipes.com");
         englishMuffinRecipe.setServings(8);
 
 

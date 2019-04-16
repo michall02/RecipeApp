@@ -1,17 +1,17 @@
 spring:
-    h2:
-        console:
-            enabled: true
-#    datasource:
-#        password: ${DB_PASSWORD}
-#        url: jdbc:mysql://localhost:3306/recipes?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-#        username: ${DB_USER_NAME}
-#    jpa:
-#        database-platform: org.hibernate.dialect.MySQL5Dialect
-#        hibernate:
-#            ddl-auto: update
-#        properties:
-#            hibernate:
-#                id:
-#                    new_generator_mappings: false
-#                show_sql: true
+#    h2:
+#        console:
+#            enabled: true
+    datasource:
+        password: ${DB_PASSWORD}
+        url: jdbc:mysql://localhost:3306/recipes?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        username: ${DB_USER_NAME}
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL5Dialect
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                id:
+                    new_generator_mappings: false
+                show_sql: true
