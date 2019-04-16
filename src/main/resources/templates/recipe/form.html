@@ -13,7 +13,7 @@
 <div class="container-fluid" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <form  th:object="${recipe}" th:action="@{/recipe/}"  method="post">
+            <form th:object="${recipe}" th:action="@{/recipe/}" method="post">
                 <input type="hidden" th:field="*{id}"/>
                 <div class="panel-group">
                     <div class="card border-warning mb-3">
@@ -25,6 +25,15 @@
                                 <div class="col-md-3 form-group">
                                     <label>Recipe Description:</label>
                                     <input type="text" class="form-control" th:field="*{description}"/>
+                                </div>
+                                <img src="../../static/images/classic-carrot-salad.jpg"
+                                     th:src="@{'/recipe/'+${recipe.id}+'/recipeimage'}"
+                                     style="height: 200px; width: 200px">
+                                <div class="col-md-1">
+                                    <a class="btn btn-danger" href="#"
+                                       th:href="@{'/recipe/' + ${recipe.id} + '/image'}" role="button"
+                                       style="position: absolute; top: 50%; right: -150px;width: 200px; height: 50px;">Change
+                                        Image</a>
                                 </div>
                             </div>
                             <div class="row">
@@ -57,10 +66,12 @@
                                 </div>
                                 <div class="col-md-3 form-group">
                                     <label>Difficulty:</label>
-                                    <select class="form-control">
-                                        <option>Easy</option>
-                                        <option>Medium</option>
-                                        <option>Hard</option>
+                                    <select class="form-control" th:field="*{difficulty}">
+                                        <option th:each="difficultyValue : ${T(pl.home.recipeapp.model.Difficulty).values()}"
+                                                th:value="${difficultyValue.name()}"
+                                                th:text="${difficultyValue.name()}"> options
+                                        </option>
+
                                     </select>
                                 </div>
                             </div>
@@ -87,7 +98,7 @@
                                     <h1>Ingredients</h1>
                                 </div>
                                 <div class="col-md-1">
-                                    <a class="btn btn-secondary" href="#" role="button">Edit</a>
+                                    <a class="btn btn-danger" href="#" role="button">Edit</a>
                                 </div>
                             </div>
                         </div>
@@ -131,7 +142,7 @@
                         </div>
                     </div>
                     <div style="position:relative; left:91.5% ">
-                    <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-danger">Submit</button>
                     </div>
                 </div>
             </form>
