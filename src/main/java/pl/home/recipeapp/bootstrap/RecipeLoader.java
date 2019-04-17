@@ -100,21 +100,21 @@ public class RecipeLoader implements ApplicationListener<ContextRefreshedEvent> 
         UnitOfMeasure cupsUom = cupsUomOptional.get();
         UnitOfMeasure sliceUom = sliceUomOptional.get();
 
-        //get Categories
-        Optional<Category> greekCategoryOptional = categoryRepository.findByDescription("Greek");
-
-        if(!greekCategoryOptional.isPresent()){
-            throw new RuntimeException("Expected Category Not Found");
-        }
-
-        Optional<Category> englishCategoryOptional = categoryRepository.findByDescription("English");
-
-        if(!englishCategoryOptional.isPresent()){
-            throw new RuntimeException("Expected Category Not Found");
-        }
-
-        Category greekCategory = greekCategoryOptional.get();
-        Category englishCategory = englishCategoryOptional.get();
+//        //get Categories
+//        Optional<Category> greekCategoryOptional = categoryRepository.findByDescription("Greek");
+//
+//        if(!greekCategoryOptional.isPresent()){
+//            throw new RuntimeException("Expected Category Not Found");
+//        }
+//
+//        Optional<Category> englishCategoryOptional = categoryRepository.findByDescription("English");
+//
+//        if(!englishCategoryOptional.isPresent()){
+//            throw new RuntimeException("Expected Category Not Found");
+//        }
+//
+//        Category greekCategory = greekCategoryOptional.get();
+//        Category englishCategory = englishCategoryOptional.get();
 
         //Classic Carrot Salad
         Recipe clCarSalRecipe = new Recipe();
@@ -143,8 +143,10 @@ public class RecipeLoader implements ApplicationListener<ContextRefreshedEvent> 
         clCarSalRecipe.getIngredients().add(new Ingredient("large apple cored and chopped", new BigDecimal(1), clCarSalRecipe, wholeUom));
         clCarSalRecipe.getIngredients().add(new Ingredient("mayonnaise", new BigDecimal(0.25), clCarSalRecipe, cupsUom));
 
+        Category clCarSalCategory = new Category();
+        clCarSalCategory.setDescription("Greek");
 
-        clCarSalRecipe.getCategories().add(greekCategory);
+        clCarSalRecipe.setCategory(clCarSalCategory);
 
         //add to return list
         recipes.add(clCarSalRecipe);
@@ -188,8 +190,10 @@ public class RecipeLoader implements ApplicationListener<ContextRefreshedEvent> 
         englishMuffinRecipe.getIngredients().add(new Ingredient("Swiss cheese", new BigDecimal(8), englishMuffinRecipe, sliceUom));
 
 
-        englishMuffinRecipe.getCategories().add(englishCategory);
+        Category englishMuffinCategory = new Category();
+        englishMuffinCategory.setDescription("English");
 
+        englishMuffinRecipe.setCategory(englishMuffinCategory);
 
         recipes.add(englishMuffinRecipe);
 

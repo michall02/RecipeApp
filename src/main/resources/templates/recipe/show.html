@@ -11,8 +11,6 @@
             float: left;
             width: 50%;
         }
-
-        /* Clear floats after the columns */
         .row-2:after {
             content: "";
             display: table;
@@ -41,14 +39,9 @@
 
                                 <div class="col-md-12">
                                     <div class="column">
-                                        <ul>
-                                            <li th:remove="all">cat one</li>
-                                            <li th:remove="all">cat two</li>
-                                            <li th:each="category:${recipe.categories}"
-                                                th:text="${category.getDescription()}">
-                                                cat three
-                                            </li>
-                                        </ul>
+                                        <div class="col-md-12">
+                                            <p th:text="${recipe.category.description}">category</p>
+                                        </div>
                                     </div>
                                 </div>
 
