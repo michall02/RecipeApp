@@ -11,9 +11,8 @@ The recipes come from the website: www.simplyrecipes.com
 * Java 8
 * Bootstrap 4
 
-### Databases
+### Database
 * MySQL
-* H2
 
 ### Project status
 The app is under development.
