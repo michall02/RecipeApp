@@ -7,12 +7,10 @@ The recipes come from the website: www.simplyrecipes.com
 * Spring Framework 5 : 
   * Web
   * Data JPA
-  * Thymeleaf
+* Thymeleaf
 * Java 8
 * Bootstrap 4
 
 ### Database
 * MySQL
 
-### Project status
-The app is under development.
